@@ -4,8 +4,7 @@ $csv = Import-Csv -Path "C:\Users\Administrator\Downloads\test.csv" -Delimiter "
 
 ForEach ($item In $csv)  {
                     #change Email address of groups from CSV
-                    Set-ADGroup $item.GroupName -description "$($item.Description)" 
-                    
+                    Set-ADGroup $item.GroupName -Replace @{mail=$item.Email}
                     }
 
               
