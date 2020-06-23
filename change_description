@@ -1,0 +1,11 @@
+$csv = Import-Csv -Path "C:\Users\Administrator\Downloads\test.csv" -Delimiter ";"
+
+ForEach ($item In $csv)  {
+                   
+                   #Change description of groups from csv 
+
+                   Set-ADGroup $item.GroupName -description "$($item.Description)" 
+                    
+                    }
+
+              
